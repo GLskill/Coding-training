@@ -1,11 +1,11 @@
-name = input("Как вас зовут? ")
-print("Привет,", name, "!")
+name = input("Your Name? ")
+print("HI HI,", name, "!")
 
 # площадь круга.
 
-radius = float(input("Введите радиус круга: "))
+radius = float(input("radius circle: "))
 area = 3.14 * radius ** 2
-print("Площадь круга равна", area)
+print("radius circle is ", area)
 
 
 # квадрат на экране.

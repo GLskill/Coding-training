@@ -2,21 +2,21 @@ import random
 
 number = random.randint(1, 100)
 
-print("Я загадал число от 1 до 100. Попробуйте его угадать.")
+print("i have number at 1 to 100. Whot is this number.")
 
 guesses = 0
 
 while True:
-    guess = int(input("Введите ваше предположение: "))
+    guess = int(input("Enter your guess: "))
     guesses += 1
 
     if guess == number:
-        print("Поздравляю! Вы угадали число за", guesses, "попыток!")
+        print("YES ! You guessed it ", guesses, "attempts!")
         break
     elif guess < number:
-        print("Ваше предположение слишком мало.")
+        print("this number is small.")
     else:
-        print("Ваше предположение слишком велико.")
+        print("this number is so BIG.")
 
 
 

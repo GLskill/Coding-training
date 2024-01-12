@@ -30,5 +30,5 @@ print("Zdarova Zaebal " + name + "!")
 
 print("Zdarova " + str(age) + " bleat")
 
-print("мне " + str(age) + " let!")
+print("MY age " + str(age) + " let!")
 

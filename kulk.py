@@ -6,22 +6,22 @@ init()
 #print(Fore.BLACK)
 #print(Back.GREEN)
 
-what = input("что делаем ? (+, -): ")
+what = input("Writh ? (+, -): ")
 
 print(Back.CYAN)
 
-a = float(input("Введи первое число : "))
-b = float(input("Введи второе число : "))
+a = float(input("First number : "))
+b = float(input("Second Number: "))
 
 print(Back.YELLOW)
 
 if what == "+":
     c = a + b
-    print(f"Результат : {c}")
+    print(f"Result : {c}")
 elif what == "-":
     c = a - b
-    print(f"Результат : {c}")
+    print(f"Result : {c}")
 else:
-    print("Не верно заебал , выбери другую операцию")
+    print("incorrect error in the symbol")
 
 
