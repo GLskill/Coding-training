@@ -1,6 +1,3 @@
-name = input("Your Name? ")
-print("HI HI,", name, "!")
-
 # площадь круга.
 
 radius = float(input("radius circle: "))
@@ -16,10 +13,10 @@ t = turtle.Turtle()
 
 t.begin_fill()
 for i in range(12):
-    t.forward(200)
-    t.left(210)
+    t.forward(int(radius))
+    t.left(int(radius)+10)
 t.end_fill()
 
-turtle.done()
+turtle.done()56
 
 
