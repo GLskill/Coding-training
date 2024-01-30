@@ -411,3 +411,385 @@
 #
 # print("admin" in user_roles)
 # print("writer" in user_roles)
+#
+# Словарь ( Dict )
+#
+# person = {
+#     "name": "john",
+#     "age": 30,
+#     "city": "Now York",
+#     "car": "Ford mustang GT"
+# }
+#
+# person["job"] = "Engineer"
+#
+# official_information_info = {
+#     "name": "Piter",
+#     "age": 36,
+#     "city": "Saint Petersburg",
+#     "job": "Boilinger"
+# }
+#
+# person =  person | official_information_info
+#
+# print(person)
+#
+# print("----------------------------------------------------------------")
+#
+# def add(x: int, y: int) -> int:
+#     return x + y
+#
+# print(add(12, 23))
+#
+# def add_all(*args):
+#     print(args)
+#     print(type(args))
+#
+# add_all(1, 2, 4, 5, 6)
+#
+# def add_all(*args):
+#     summary = 0
+#     for num in args:
+#         summary += num
+#     return summary
+#
+# print(add_all(1, 2, 4, 5, 6))
+#
+# numbers_01 = [1, 2, 3, 4, 5, 6, 7, 7, 8, 8 ,9]
+# other_numbers = [12, 56, 23, 66]
+#
+# print(add_all(*numbers_01, *other_numbers))
+#
+#
+# def introduce(**kwargs):
+#     print(kwargs)
+#     print(type(kwargs))
+#
+# introduce(name="Johan", age=56, city="Big apple")
+#
+# def func_with_all_arguments(x: int, y: int, *args, value: int = 6,**kwargs):
+#     print(x, y)
+#     print(args)
+#     print(value)
+#     print(kwargs)
+#
+# person = {
+#     "name": "john",
+#     "age": 30,
+#     "city": "Now York",
+#     "car": "Ford mustang GT"
+# }
+#
+# func_with_all_arguments(1, 2, 3, 4, 5, **person)
+#
+#
+# print("----------------------------------------------------------------")
+# def modify_dict(old_dict: dict, **kwargs) -> tuple[dict, bool]:
+#     is_modified = False
+#
+#     for key, value in kwargs.items():
+#         if old_dict.get(key) != value:
+#             old_dict[key] = value
+#             is_modified = True
+#
+#     return old_dict, is_modified
+#
+# product = {'id': 1, 'name': 'Laptop', 'price': 19.999}
+#
+# product, wos_modified = modify_dict(old_dict=product, in_stock=True)
+#
+# print(product)
+# print(wos_modified)
+# print("----------------------------------------------------------------")
+#
+# import json
+#
+# book = {
+#     'title': '1984',
+#     'author': 'George Orwell',
+#     'isbn': '978-0451524935',
+#     'uuid': 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
+# }
+#
+# json_string = json.dumps(book)
+#
+# print(type(json_string))
+# print(json_string)
+#
+# json_string = '{"title": "1984", "author": "George Orwell", "isbn": "978-0451524935", "uuid": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"}'
+#
+# book = json.loads(json_string)
+#
+# look = book
+#
+# kekcheburek = look
+#
+# print(type(json_string))
+# print(json_string)
+# print("----------------------------------------------------------------")
+#
+#
+# import requests
+#
+# response = requests.get('https://api.binance.com/api/v3/ticker/price', params={'symbol': 'DOTUSDT'})
+# content = response.content
+# print(content)
+# print(type(content))
+# price_object = response.json()
+# price = float(price_object['price'])
+#
+#
+# import time
+#
+# bitcoin_prices = []
+# for i in range(15):
+#     response = requests.get('https://api.binance.com/api/v3/ticker/price', params={'symbol': 'DOTUSDT'})
+#     price = float(response.json()["price"])
+#     price = round(price, 2)
+#     bitcoin_prices.append(price)
+#     time.sleep(1)
+#
+# print(bitcoin_prices)
+# print(len(bitcoin_prices))
+# print(max(bitcoin_prices))
+# print(min(bitcoin_prices))
+#
+# print("----------------------------------------------------------------")
+#
+# import requests
+#
+# response = requests.get('https://api.binance.com/api/v3/ticker/price')
+#
+# for ticker in response.json():
+#     if ticker['symbol'] == 'ETHUSDT':
+#         print(ticker['price'])
+#
+#print("----------------------------------------------------------------")
+#
+# squares = []
+# for x in range(20):
+#     squares.append(x ** 2)
+#
+# print(squares)
+#
+# # ОДин и тот же способ
+#
+# squares_01 = [x ** 3 for x in range (15)]
+#
+# print(squares_01)
+#
+# even_squares = []
+# for x in range(15):
+#     if x % 2 == 0:
+#         even_squares.append(x ** 2)
+#
+# print(even_squares)
+#
+# print("-----------------------------------------------------------------")
+#
+# even_squares = [x ** 2 for x in range(10) if x % 2 == 0]
+#
+# print(even_squares)
+#
+# labelled_numbers = []
+# numbers = (1, 2, 4, 5, 6, 7, 9)
+#
+# for num in numbers:
+#     if num % 2 == 0:
+#         labelled_numbers.append("even")
+#     else:
+#         labelled_numbers.append("odd")
+#
+# print(labelled_numbers)
+#
+# print("-----------------------------------------------------------------")
+#
+# labelled_numbers = ["even" if num % 2 == 0 else "odd" for num in numbers]
+#
+# print(labelled_numbers)
+#
+# square_dict = {x: x ** 2 for x in range(20)}
+# print(square_dict)
+#
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8 ,9]
+# ]
+#
+# transpose_matrix = []
+#
+# for i in range(len(matrix)):
+#     transpose_row = []
+#     for row in matrix:
+#         transpose_row.append(row[i])
+#     transpose_matrix.append(transpose_row)
+#
+# print(transpose_matrix)
+#
+# transpose_matrix = [[row[i] for row in matrix] for i in range(len(matrix))]
+#
+# print(transpose_matrix)
+#
+# my_set = {1, 2, 3, 4, 5, 6, 7}
+#
+# print(type(my_set))
+# print(my_set)
+#
+# my_set_01 = set()
+#
+# for i in range(10):
+#     my_set_01.add(i)
+#
+# print(my_set_01)
+#
+# my_set = {1, 2, 3, 4, 5}
+#
+# print(type(my_set))
+# print(my_set)
+#
+# my_set = set()
+# for i in range(5):
+#     my_set.add(i)
+# print(my_set)
+#
+# my_set = {0, 1, 2, 3, 4}
+# my_set.add(2)
+# print(my_set)
+#
+# set1 = {1, 2, 3, 4}
+# set2 = {3, 4, 5, 6}
+#
+# print(set1.union(set2))
+# print(set1.intersection(set2))
+# united_set = set1.union(set2)
+# print(len(united_set))
+# print(set1.difference(set2))
+#
+# squares = {x ** 2 for x in range(10)}
+# print(squares)
+#
+# print({1, 2, 3} == {3, 2, 1})
+# my_set = {1, 2, 3}
+#
+# numbers = [1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]
+# unique_numbers = set(numbers)
+# print(unique_numbers)
+# unique_numbers = list(unique_numbers)
+# print(unique_numbers)
+#
+# unique_numbers = list(set(numbers))
+# print(unique_numbers)
+#
+# print("-----------------------------------------------------------------")
+#
+# fruits = ['banana', 'apple', 'cherry', 'date']
+# sorted_fruits = sorted(fruits)
+# sorted_fruits_01 = sorted(fruits,reverse=True)
+#
+#
+# print(sorted_fruits)
+# print(fruits)
+# print(sorted_fruits_01)
+#
+# def sort_by_len(element: str) -> int:
+#     return len(element)
+#
+# print(sort_by_len)
+# print(type(sort_by_len))
+#
+# sorted_fruits = sorted(fruits, key=sort_by_len)
+#
+# print(sorted_fruits)
+#
+#
+# def sort_by_age(element):
+#     return element["age"]
+#
+#
+# sorted_people = sorted(people, key=sort_by_age)
+# print(sorted_people)
+#
+# people = [
+#     {"name": "Alice", "age": 25},
+#     {"name": "Bob", "age": 20},
+#     {"name": "Diana", "age": 30},
+#     {"name": "Charlie", "age": 30},
+# ]
+#
+#
+# def sort_by_age_name(element):
+#     return element["age"], element["name"]
+#
+#
+# sorted_people = sorted(people, key=sort_by_age_name)
+# print(sorted_people)
+#
+# print("-----------------------------------------------------------------")
+#
+# def is_even(n: int) -> bool:
+#     return n % 2 == 0
+#
+# numbers = [10, 11, 12, 14, 15, 16]
+#
+# filtered_numbers = list(filter(is_even, numbers))
+#
+# print(type(filtered_numbers))
+# print(filtered_numbers)
+#
+# people = [
+#     {"name": "Alice", "age": 25},
+#     {"name": "Bob", "age": 20},
+#     {"name": "Diana", "age": 30},
+#     {"name": "Charlie", "age": 30},
+# ]
+#
+# def is_adult(person: dict) -> bool:
+#     return person["age"] >= 22
+#
+# filter_people = list(filter(is_adult,people))
+# print(filter_people)
+#
+#
+# def sort_by_len(element: str) -> int:
+#     return len(element)
+#
+#
+# sort_by_len_lambda = lambda element: len(element)
+# print(sort_by_len("banana"))
+# print(sort_by_len_lambda("banana"))
+#
+#
+# fruits = ["banana", "apple", "cherry", "date"]
+# sorted_fruits = sorted(fruits, key=lambda element: len(element))
+#
+# fruits = ["apple", "banana", "cherry", "date"]
+# longest_word = max(fruits, key=lambda x: len(x))
+# print(longest_word)
+#
+#
+# people = [
+#     {"name": "Alice", "age": 25},
+#     {"name": "Charlie", "age": 20},
+#     {"name": "Bob", "age": 20},
+#     {"name": "Diana", "age": 30},
+# ]
+# people_min = min(people, key=lambda x: (x["age"], x["name"]))
+# print(people_min)
+#
+# print("-----------------------------------------------------------------")
+#
+# def find_average(*, numbers: list) -> float:
+#     return  sum(numbers) / len(numbers)
+#
+# try:
+#     print(find_average(numbers=[1, 2, 3, 5, 6, 7,]))
+# except ZeroDivisionError:
+#     print("the list is empty")
+#
+# print("-----------------------------------------------------------------")
+
+
+
+
+
